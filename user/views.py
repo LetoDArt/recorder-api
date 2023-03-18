@@ -35,9 +35,8 @@ class BlacklistTokenUpdateView(APIView):
     @staticmethod
     def post(request):
         try:
-            refresh_token = request.data["refresh_token"]
+            refresh_token = request.data["refresh"]
             token = RefreshToken(refresh_token)
-            print(111, token)
             token.blacklist()
             return Response({"message": "User has been successfully unauthorized"},
                             status=status.HTTP_205_RESET_CONTENT)
