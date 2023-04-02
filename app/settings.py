@@ -27,7 +27,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(env('DEBUG'))
 
-ALLOWED_HOSTS = ["localhost", "0.0.0.0", "192.168.31.237", "192.168.31.190"]
+ALLOWED_HOSTS = ["localhost", "0.0.0.0", "192.168.31.237", "192.168.31.190", "192.168.31.50"]
 
 
 # Application definition
@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'djoser',
-    'user'
+    'user',
+    'channels',
+    'video'
 ]
 
 MIDDLEWARE = [
@@ -75,7 +77,17 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'app.wsgi.application'
+# WSGI_APPLICATION = 'app.wsgi.application'
+ASGI_APPLICATION = 'app.asgi.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)]
+        }
+    }
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
