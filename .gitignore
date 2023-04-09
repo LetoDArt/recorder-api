@@ -1,2 +1,5 @@
 /.idea
 .env
+
+/recorded_data
+/processed_data
