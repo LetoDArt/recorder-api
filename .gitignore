@@ -3,3 +3,5 @@
 
 /recorded_data
 /processed_data
+
+/recogniter/assets/vgg16_deepstreet_training.h5
