@@ -4,6 +4,7 @@ from django.contrib.auth.models import AnonymousUser
 from channels.generic.websocket import AsyncJsonWebsocketConsumer
 
 from video.utils import process_bytes, process_text
+from recogniter.recogniter import Recogniter
 
 
 class StreamerConsumer(AsyncJsonWebsocketConsumer):
@@ -17,6 +18,8 @@ class StreamerConsumer(AsyncJsonWebsocketConsumer):
 
         print("connection established")
 
+        self.recognizer = Recogniter()
+
         await self.channel_layer.group_add(self.group_name, self.channel_name)
 
         await self.accept()
@@ -25,8 +28,14 @@ class StreamerConsumer(AsyncJsonWebsocketConsumer):
         await self.channel_layer.group_discard(self.group_name, self.channel_name)
 
     async def receive(self, text_data=None, bytes_data=None, **kwargs):
+        file = ''
         if bytes_data is not None:
-            process_bytes(bytes_data)
+            file = process_bytes(bytes_data)
+            result = self.recognizer.process_image(file)
+            await self.channel_layer.group_send(self.group_name, {
+                'type': 'send_message',
+                'message': result
+            })
 
         if text_data is not None:
             event = process_text(text_data)

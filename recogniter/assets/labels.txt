@@ -1,0 +1,43 @@
+speed limit 20 km / h
+speed limit 30 km / h
+speed limit 50 km / h
+speed limit 60 km / h
+speed limit 70 km / h
+speed limit 80 km / h
+end of speed limit 80 km / h
+speed limit  100 km / h
+speed limit 120 km / h
+overtaking is prohibited
+overtaking is prohibited for trucks weighing more than 3.5 tons
+priority of traffic at the next intersection
+priority road
+yield sign
+stop
+traffic is prohibited
+transit is prohibited for trucks with a full load of more than 3.5 tons
+Entry is prohibited
+other hazards
+sharp left turn
+sharp left right
+double turn
+bumps on the road
+slippery road
+The narrowing of the road is carried out on the right
+road works
+traffic light
+pedestrian crossing
+children
+bicycle crossing
+Sliding due to snow or ice
+stray wild animals
+End of the previous restriction
+straight to the right
+straight to the left
+straight forward
+straight or right
+straight or left
+passage on the right
+passage on the left
+circular motion
+termination of the overtaking prohibition
+termination of the overtaking prohibition for trucks with a full load of more than 3.5 tons
