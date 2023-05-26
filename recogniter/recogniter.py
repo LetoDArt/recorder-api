@@ -100,10 +100,13 @@ class Recogniter():
     def __prepare_image(self, image):
         list = []
 
-        res = cv2.resize(image, (224, 224)).astype(numpy.float32)
-        res = res[:, :, ::-1]
-        # Zero-center by mean pixel
-        res -= numpy.mean(res)
-        list.append(res)
+        try:
+            res = cv2.resize(image, (224, 224)).astype(numpy.float32)
+            res = res[:, :, ::-1]
+            # Zero-center by mean pixel
+            res -= numpy.mean(res)
+            list.append(res)
 
-        return numpy.array(list)
+            return numpy.array(list)
+        except Exception as e:
+            print(e)
