@@ -1,7 +1,7 @@
 # Recorder API
 
-This project has been created as backend part of a project written for final qualifying work in SFedU (Rostov-on-Don).
-The goal of application to connect with client application via HTTP and WS channels for traffic sign recognition.
+This project has been created as backend part of a project written as final qualifying work in SFedU (Rostov-on-Don).
+The goal of application is to connect with client application via HTTP and WS channels for traffic sign recognition.
 
 
 ## Run application
